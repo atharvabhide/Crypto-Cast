@@ -19,3 +19,6 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard.py
 ```
+
+## Demo
+<img src="https://github.com/atharvabhide/Crypto-Cast/blob/main/demo.png">
