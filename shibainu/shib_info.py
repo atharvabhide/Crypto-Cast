@@ -1,17 +1,15 @@
-import base64
-
 import streamlit as st
 import yfinance as yf
 import plotly.graph_objs as go
 
 def get_shib_info():
     
-    data = yf.download("SHIB-CAD")
+    data = yf.download("SHIB-USD")
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=list(data.index), y=list(data['Adj Close']), line=dict(color="#76D714")))
     fig.update_layout(
                       xaxis_title="Date",
-                      yaxis_title="P rice in Canadian dollar", )
+                      yaxis_title="Price in US dollars", )
     fig.update_layout(
         xaxis=dict(
             rangeselector=dict(

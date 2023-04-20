@@ -4,7 +4,6 @@ import utils.live_pricing as live_pricing
 import utils.prediction as prediction
 import streamlit as st
 from streamlit_option_menu import option_menu
-from  PIL import Image
 
 st.set_page_config(
     page_title="CryptoCast",
@@ -12,8 +11,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",)
 
-st.markdown("<center><h1 Style=\"overflow: visible; padding-bottom: 50px; padding-top: 0px;\">CryptoCast </h1></center>", unsafe_allow_html=True)
-#st.caption("v 1.0.0")
+st.markdown("<center><h1 Style='overflow: visible; padding-bottom: 50px; padding-top: 0px;'>CryptoCast</h1></center>", unsafe_allow_html=True)
+
 selected = option_menu(
         menu_title=None,
         options=["Home", "Basic Info", "Prediction"],
@@ -25,7 +24,7 @@ selected = option_menu(
         "icon": {"color": "#2ECC71", "font-size": "25px"},
         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "light-grey"},
         "nav-link-selected": {"background-color": "#2ECC71"},
-}
+        }
 )
 
 if selected == "Home":
@@ -43,6 +42,5 @@ hide_menu_style = """
         footer {visibility: hidden;}
         </style>
         """
-
 
 st.markdown(hide_menu_style, unsafe_allow_html=True)

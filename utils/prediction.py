@@ -7,7 +7,6 @@ import ethereum.eth as eth
 import litecoin.ltc as ltc
 import shibainu.shib as shib
 
-
 def get_prediction():
 
     def load_lottieurl(url: str):

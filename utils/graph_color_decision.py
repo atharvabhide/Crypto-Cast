@@ -1,5 +1,3 @@
-#def set_color():
-
 bit_color=0.0
 eth_color = 0.0
 usdt_color = 0.0

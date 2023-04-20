@@ -8,7 +8,7 @@ import statsmodels.api as sm
 
 
 def get_doge():
-            doge = yf.download("DOGE-CAD")
+            doge = yf.download("DOGE-USD")
             doge = doge.drop(columns=['Open','High','Low','Close','Volume'])
             modelhigh = sm.tsa.statespace.SARIMAX(doge['Adj Close'],
                                                   order=(1, 1, 0),
@@ -27,7 +27,7 @@ def get_doge():
             One_week_values = round(One_week_values, 2)
             pred_uc.predicted_mean.plot(ax=ax, color='green', label='Forecast')
             ax.set_xlabel('Date')
-            ax.set_ylabel('CAD price')
+            ax.set_ylabel('USD price')
             ax.patch.set_facecolor('white')
             plt.legend()
             with st.expander(" 👁 (All time graph + predicted graph)"):
@@ -36,7 +36,7 @@ def get_doge():
                 # printing one week values
             st.header("One Week Forecasting")
             fig = px.line(x=One_week_values.index, y=One_week_values.values,
-                              labels={'x': 'Date', 'y': 'Canadian Dollars'}, title="Dogecoin (DOGE) forecasting",
+                              labels={'x': 'Date', 'y': 'US Dollars'}, title="Dogecoin (DOGE) forecasting",
                               markers=True)
             fig.update_traces(line_color='#76D714', line_width=5)
             with st.expander(" 👁 ", True):
@@ -45,7 +45,7 @@ def get_doge():
             #printing 6 months values
             st.header("1 Month Forecasting")
             fig = px.line(x=pred_uc.predicted_mean.index, y=pred_uc.predicted_mean.values,
-                          labels={'x': 'Date', 'y': 'Canadian Dollars'}, title="Dogecoin (DOGE) forecasting",
+                          labels={'x': 'Date', 'y': 'US Dollars'}, title="Dogecoin (DOGE) forecasting",
                           markers=True)
             fig.update_traces(line_color='#76D714', line_width=5)
             with st.expander(" 👁 ",True):
