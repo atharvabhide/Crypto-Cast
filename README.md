@@ -1,4 +1,4 @@
-# Crypo-Cast: Visualize and get Forecasts of Cryptocurrency prices
+# Crypo-Cast
 
 ## Clone the repository:
 ```
