@@ -1,4 +1,4 @@
-# Crypo-Cast
+# Crypto-Cast
 
 ## Clone the repository:
 ```
