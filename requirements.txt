@@ -9,3 +9,4 @@ cryptocompare
 streamlit-option-menu
 python-dotenv
 streamlit
+statsmodels

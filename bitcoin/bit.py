@@ -7,7 +7,6 @@ import statsmodels.api as sm
 from pytz import timezone
 
 
-
 def get_bit():
     bitcoin = yf.download('BTC-USD')
     bitcoin = bitcoin.drop(['Open', 'High', 'Low', 'Close', 'Volume'], axis=1)

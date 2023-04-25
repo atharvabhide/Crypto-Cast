@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 
 def bitcoin_24_data():
     fig1 = go.Figure()
-    data = yf.download(tickers='BTC-usd', period='22h', interval='15m')
+    data = yf.download(tickers='BTC-USD', period='22h', interval='15m')
     fig1.add_trace(go.Candlestick(x=data.index,
                                   open=data['Open'],
                                   high=data['High'],
