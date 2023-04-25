@@ -1,4 +1,4 @@
-# Crypo-Cast: Visualize and get Forecasts of Cryptocurrency prices
+# Crypto-Cast
 
 ## Clone the repository:
 ```
@@ -19,3 +19,6 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard.py
 ```
+
+## Demo
+<img src="https://github.com/atharvabhide/Crypto-Cast/blob/main/demo.png">
