@@ -10,7 +10,7 @@ from pytz import timezone
 def get_bit():
     fmt = "%H:%M:%S"
     timezoneca = 'CA/Ottawa'
-    bitcoin = yf.download('BTC-USD')
+    bitcoin = yf.download('BTC-CAD')
     bitcoin = bitcoin.drop(['Open', 'High', 'Low', 'Close', 'Volume'], axis=1)
     modelhigh = sm.tsa.statespace.SARIMAX(bitcoin['Adj Close'],
                                           order=(0, 1, 1),
@@ -38,7 +38,7 @@ def get_bit():
         # printing one week values
     st.header("One Week Forecasting")
     fig = px.line(x=One_week_values.index, y=One_week_values.values,
-                      labels={'x': 'Date', 'y': 'Canadian Dollars'}, title="Bitcoin (BTC) forecasting",
+                      labels={'x': 'Date', 'y': 'CAD Dollars'}, title="Bitcoin (BTC) forecasting",
                       markers=True)
     fig.update_traces(line_color='#76D714', line_width=5)  # 00ff00
     with st.expander(" 👁 ", True):
@@ -47,7 +47,7 @@ def get_bit():
     # printing 6 months values
     st.header("1 Month Forecasting")
     fig = px.line(x=pred_uc.predicted_mean.index, y=pred_uc.predicted_mean.values,
-                  labels={'x': 'Date', 'y': 'Canadian Dollars'}, title="Bitcoin (BTC) forecasting",
+                  labels={'x': 'Date', 'y': 'CAD Dollars'}, title="Bitcoin (BTC) forecasting",
                   markers=True)
     fig.update_traces(line_color='#76D714', line_width=5)
     with st.expander(" 👁 ", True):

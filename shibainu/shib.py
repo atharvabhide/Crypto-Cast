@@ -8,7 +8,7 @@ import statsmodels.api as sm
 
 
 def get_shib():
-            SHIB = yf.download("SHIB-USD")
+            SHIB = yf.download("SHIB-CAD")
             SHIB = SHIB.drop(columns=['Open','High','Low','Close','Volume'])
             modelhigh = sm.tsa.statespace.SARIMAX(SHIB['Adj Close'],
                                                   order=(1, 0, 0),
@@ -27,7 +27,7 @@ def get_shib():
             One_week_values = round(One_week_values, 2)
             pred_uc.predicted_mean.plot(ax=ax, color='green', label='Forecast')
             ax.set_xlabel('Date')
-            ax.set_ylabel('USD price')
+            ax.set_ylabel('CAD price')
             ax.patch.set_facecolor('white')
             plt.legend()
             with st.expander(" 👁 (All time graph + predicted graph)"):
@@ -36,7 +36,7 @@ def get_shib():
                 # printing one week values
             st.header("One Week Forecasting")
             fig = px.line(x=One_week_values.index, y=One_week_values.values,
-                              labels={'x': 'Date', 'y': 'US Dollars'}, title="Shiba Inu Coin (SHIB) forecasting",
+                              labels={'x': 'Date', 'y': 'CAD Dollars'}, title="Shiba Inu Coin (SHIB) forecasting",
                               markers=True)
             fig.update_traces(line_color='#76D714', line_width=5)
             with st.expander(" 👁 ", True):
@@ -44,7 +44,7 @@ def get_shib():
             #printing 6 months values
             st.header("1 Month Forecasting")
             fig = px.line(x=pred_uc.predicted_mean.index, y=pred_uc.predicted_mean.values,
-                          labels={'x': 'Date', 'y': 'US Dollars'}, title="Shiba Inu Coin  (SHIB) forecasting",
+                          labels={'x': 'Date', 'y': 'CAD Dollars'}, title="Shiba Inu Coin  (SHIB) forecasting",
                           markers=True)
             fig.update_traces(line_color='#76D714', line_width=5)
             with st.expander(" 👁 ",True):
