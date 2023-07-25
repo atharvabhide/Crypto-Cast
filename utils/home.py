@@ -19,9 +19,9 @@ def get_home():
         }
         def get_btc():
                 parameters = {'slug': 'bitcoin', 'convert': 'USD'}
-                session = Session()
-                session.headers.update(headers)
-                response = session.get(url, params=parameters)
+                # session = Session()
+                # session.headers.update(headers)
+                response = requests.get(url, headers=parameters)
                 hour24 = json.loads(response.text)['data']['1']['quote']['USD']['percent_change_24h']
                 price = json.loads(response.text)['data']['1']['quote']['USD']['price']
                 marketcap = json.loads(response.text)['data']['1']['quote']['USD']['market_cap']
