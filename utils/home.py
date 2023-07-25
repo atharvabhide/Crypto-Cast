@@ -21,7 +21,7 @@ def get_home():
                 parameters = {'slug': 'bitcoin', 'convert': 'USD'}
                 # session = Session()
                 # session.headers.update(headers)
-                response = requests.get(url, headers=parameters)
+                response = requests.get(url, params=parameters)
                 hour24 = json.loads(response.text)['data']['1']['quote']['USD']['percent_change_24h']
                 price = json.loads(response.text)['data']['1']['quote']['USD']['price']
                 marketcap = json.loads(response.text)['data']['1']['quote']['USD']['market_cap']
