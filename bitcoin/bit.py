@@ -16,7 +16,7 @@ def get_bit():
                                           enforce_stationarity=False,
                                           enforce_invertibility=False)
     resultshigh = modelhigh.fit()
-    pred = resultshigh.get_prediction(start=datetime(2016, 1, 1), dynamic=False)
+    pred = resultshigh.get_prediction(start=datetime.now(), dynamic=False)
     pred_ci = pred.conf_int()
     ax = bitcoin['2018':].plot(label='observed')
     pred.predicted_mean.plot(ax=ax, label='Forecasted', alpha=.2, figsize=(14, 7))
