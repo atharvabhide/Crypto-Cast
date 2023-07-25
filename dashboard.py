@@ -1,6 +1,5 @@
 import utils.basic_info as basic_info
 import utils.home as home
-import utils.live_pricing as live_pricing
 import utils.prediction as prediction
 import streamlit as st
 from streamlit_option_menu import option_menu
