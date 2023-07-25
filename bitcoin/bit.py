@@ -8,6 +8,8 @@ from pytz import timezone
 
 
 def get_bit():
+    fmt = "%H:%M:%S"
+    timezoneca = 'CA/Ottawa'
     bitcoin = yf.download('BTC-USD')
     bitcoin = bitcoin.drop(['Open', 'High', 'Low', 'Close', 'Volume'], axis=1)
     modelhigh = sm.tsa.statespace.SARIMAX(bitcoin['Adj Close'],
